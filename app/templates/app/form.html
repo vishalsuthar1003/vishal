@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    span{
+        color:brown;   }
+    
+    </style>
+     <script>
+        function check_fname(){
+            var f = document.frm.fname.value;
+            var reg = /^[a-zA-Z]+$/
+            if(f.trim()==""){
+                document.getElementById("fname").innerHTML="Please Enter fname";
+            }
+            else if (!reg.test(f)){
+                document.getElementById("fname").innerHTML="Please enter Only Alpha";
+            }
+            else{
+                document.getElementById("fname").innerHTML="";
+            }
+        }
+
+        function check_lname(){
+            var g = document.frm.lname.value;
+            var reg = /^[a-zA-Z]+$/
+            if(g.trim()==""){
+                document.getElementById("lname").innerHTML="Please Enter lname";
+            }
+            else if (!reg.test(g)){
+                document.getElementById("lname").innerHTML="Please enter Only Alpha";
+            }
+            else{
+                document.getElementById("lname").innerHTML="";
+            }
+        }
+
+        function check_email(){
+            var h = document.frm.email.value;
+            var reg = /^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/
+            if(h.trim()==""){
+                document.getElementById("email").innerHTML="Please Enter valid Email";
+            }
+            else{
+                document.getElementById("email").innerHTML="";
+            }
+        }
+
+        function check_phone(){
+            var i = document.frm.phone.value;
+            var reg = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
+            if(i.trim()==""){
+                document.getElementById("phone").innerHTML="Please Enter valid phone Number";
+            }
+            else{
+                document.getElementById("phone").innerHTML="";
+            }
+        }
+
+    
+     </script>
+
+</head>
+<body>
+    <form action="" name="frm" >
+        <table>
+
+           <tr>
+                  <td><lable>First Name </lable></td>
+                  <td><input type="text" name ="fname" onblur="check_fname();"></td>
+                  <td><span id="fname"></span></td>         
+          </tr>
+
+           <tr>
+                   <td><lable>Last Name </lable></td>
+                   <td><input type="text" name ="lname" onblur="check_lname();"></td>
+                   <td><span id="lname"></span></td>
+          </tr>
+
+          <tr>
+            <td><lable>Email</lable></td>
+            <td><input type="email" name ="email" onblur="check_email();"></td>
+            <td><span id="email"></span></td>
+            
+          </tr>
+
+          <tr>
+            <td><lable>Contact</lable></td>
+            <td><input type="number" name ="phone" onblur="check_phone();"></td>
+            <td><span id="phone"></span></td>
+            
+          </tr>
+
+          <input type="submit" name="submit" value="submit" style="background-color: brown;">
+
+         
+
+        </table>
+</body>
+</html
